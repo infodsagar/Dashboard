@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+#headImg {
+  background-color: black;
+}
+#headImg::before {
+  content: '';
+  background-image: url('../images//homepage/home1.png');
+  background-size: 100% 100%;
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.75;
+}
+
+#welcomeId {
+  font-family: 'Raleway', sans-serif;
+}

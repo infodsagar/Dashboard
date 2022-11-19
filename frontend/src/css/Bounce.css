@@ -1,0 +1,166 @@
+/*
+--gainsboro: #d1dcd8ff;
+--independence: #3b4c67ff;
+--maize-crayola: #f2ca53ff;
+--caput-mortuum: #4e2a1bff;
+--smoky-black: #0b0500ff;
+
+/* CSS HSL 
+--gainsboro: hsla(158, 14%, 84%, 1);
+--independence: hsla(217, 27%, 32%, 1);
+--maize-crayola: hsla(45, 86%, 64%, 1);
+--caput-mortuum: hsla(18, 49%, 21%, 1);
+--smoky-black: hsla(27, 100%, 2%, 1);
+
+/* SCSS HEX 
+$gainsboro: #d1dcd8ff;
+$independence: #3b4c67ff;
+$maize-crayola: #f2ca53ff;
+$caput-mortuum: #4e2a1bff;
+$smoky-black: #0b0500ff;
+
+/* SCSS HSL 
+$gainsboro: hsla(158, 14%, 84%, 1);
+$independence: hsla(217, 27%, 32%, 1);
+$maize-crayola: hsla(45, 86%, 64%, 1);
+$caput-mortuum: hsla(18, 49%, 21%, 1);
+$smoky-black: hsla(27, 100%, 2%, 1);
+
+/* SCSS RGB
+$gainsboro: rgba(209, 220, 216, 1);
+$independence: rgba(59, 76, 103, 1);
+$maize-crayola: rgba(242, 202, 83, 1);
+$caput-mortuum: rgba(78, 42, 27, 1);
+$smoky-black: rgba(11, 5, 0, 1);
+
+/* SCSS Gradient 
+$gradient-top: linear-gradient(0deg, #d1dcd8ff, #3b4c67ff, #f2ca53ff, #4e2a1bff, #0b0500ff);
+$gradient-right: linear-gradient(90deg, #d1dcd8ff, #3b4c67ff, #f2ca53ff, #4e2a1bff, #0b0500ff);
+$gradient-bottom: linear-gradient(180deg, #d1dcd8ff, #3b4c67ff, #f2ca53ff, #4e2a1bff, #0b0500ff);
+$gradient-left: linear-gradient(270deg, #d1dcd8ff, #3b4c67ff, #f2ca53ff, #4e2a1bff, #0b0500ff);
+$gradient-top-right: linear-gradient(45deg, #d1dcd8ff, #3b4c67ff, #f2ca53ff, #4e2a1bff, #0b0500ff);
+$gradient-bottom-right: linear-gradient(135deg, #d1dcd8ff, #3b4c67ff, #f2ca53ff, #4e2a1bff, #0b0500ff);
+$gradient-top-left: linear-gradient(225deg, #d1dcd8ff, #3b4c67ff, #f2ca53ff, #4e2a1bff, #0b0500ff);
+$gradient-bottom-left: linear-gradient(315deg, #d1dcd8ff, #3b4c67ff, #f2ca53ff, #4e2a1bff, #0b0500ff);
+$gradient-radial: radial-gradient(#d1dcd8ff, #3b4c67ff, #f2ca53ff, #4e2a1bff, #0b0500ff);
+*/
+.containerBounce {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainDiv {
+  display: flex;
+  flex-direction: column;
+  min-width: 24px;
+  min-height: 60px;
+  border: 2px solid #f2ca53ff;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  animation: mainDivAnim 5s linear 0s infinite normal none;
+}
+
+@keyframes mainDivAnim {
+  0% {
+  }
+  25% {
+    transform: translate(0%, 10%);
+  }
+  50% {
+    transform: translate(0%, 0%);
+  }
+  75% {
+    transform: translate(0%, -10%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+
+@keyframes mainDivAnimBefore {
+  0% {
+  }
+  25% {
+    transform: translate(0%, 10%);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(0%, 0%);
+  }
+  75% {
+    transform: translate(0%, -10%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+
+.subDiv {
+  min-width: 16px;
+  min-height: 16px;
+  border: 2px solid #f2ca53ff;
+  border-radius: 50%;
+  background-color: rgb(9, 9, 9);
+  animation: subDivAnim 5s linear 0s infinite normal none;
+}
+
+@keyframes subDivAnim {
+  0% {
+    transform: scale(0.5);
+  }
+  25% {
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.6);
+    transform: translate(0%, 100%);
+  }
+  50% {
+    transform: translate(0%, 0%) scale(0.5);
+  }
+  75% {
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.6);
+    transform: translate(0%, -100%);
+  }
+  100% {
+    transform: scale(0.5) translate(0%, 0%);
+  }
+}
+
+.linedown {
+  position: relative;
+  max-width: 1px;
+  height: 80px;
+  background-color: #333;
+}
+
+.linedown:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 2px;
+  min-width: 2px;
+  height: 80%;
+  background: linear-gradient(transparent, #fff, #fff, transparent);
+  animation: lineAnim 10s linear infinite;
+}
+
+@keyframes lineAnim {
+  0% {
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+  50% {
+    transform-origin: top;
+    transform: scaleY(1);
+  }
+  51% {
+    transform-origin: bottom;
+    transform: scaleY(1);
+  }
+  100% {
+    transform-origin: bottom;
+    transform: scaleY(0);
+  }
+}
